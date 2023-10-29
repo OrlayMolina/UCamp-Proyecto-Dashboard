@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poyecto 3 - Dashboard</title>
+    <title>Proyecto 3 - Dashboard</title>
     
 </head>
-<body class="bg-red-50">
+<body class="bg-cyan-50">
     <nav class="text-3xl text-white-600 bg-teal-600 p-4 shadow-xl mb-12">
         <a class="text-white font-bold mr-96" href="#">UCamp Dashboard</a>
         <a class="text-white text-xl mr-12" href="#">Sobre nosotros</a>
@@ -26,7 +26,7 @@
         <!--div Imágen del día-->
         <div>
             <h2 class="text-center font-bold text-4xl mb-10 pt-6">Imágen Del Día</h2>
-            <div class="bg-white shadow-md rounded-md mx-12 mb-12 p-6">
+            <div class="bg-white shadow-md rounded-lg mx-12 mb-12 p-6">
                 <img class="object-center py-5" width="1200px" id="imagen_nasa" src="" alt="Imágen de la API de la NASA">
                 <p id="description"></p>
             </div>
@@ -35,6 +35,38 @@
         <!--div Estadísticas-->
         <div>
             <h2 class="text-center font-bold text-4xl mb-10 pt-6">Estadísticas</h2>
+            <div class="bg-white shadow-md rounded-lg mx-12 mb-12 p-6">
+
+                <!-- Div tabla -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-teal-800 font-bold text-4xl text-center">Años de Descubrimiento de Asteroides</h1>
+            
+                            <canvas id="myChart"></canvas>
+            
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="text-teal-800 font-bold text-4xl text-center mb-4">Datos en tabla</h2>
+                            <table class="border-separate rounded-md border-spacing-1 border border-slate-400">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th class="border rounded-md border-slate-300 text-white bg-black px-4">#</th>
+                                        <th class="border rounded-md border-slate-300 text-white bg-black px-2">Asteroide</th>
+                                        <th class="border rounded-md border-slate-300 text-white bg-black px-2">Año de Descubrimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                    <tr>
+                                        <td colspan="3" class="text-center border border-slate-300 rounded-md bg-slate-200">NO HAY DATOS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>* Los registros son los primeros veinte (20) asteroides de la API de la NASA.</p>
+                        </div>
+                    </div>
+                </div><!-- Cierre de div tabla -->
+            </div>
         </div><!--Cierre div estadísticas -->
 
         <!--div Contacto-->
@@ -90,6 +122,7 @@
         UCamp de Desarrollo Full Stack 🔥 | Derechos reservados Orlay Molina 2023
     </footer><!-- Cierre de Footer -->
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/app.js"></script>
 </body>
