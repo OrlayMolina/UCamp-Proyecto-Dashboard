@@ -3,7 +3,7 @@ const description = document.getElementById("description");
 const imagenNasa = document.getElementById("imagen_nasa");
 const tbody = document.getElementById('tbody');
 
-const clave = "DEMO_KEY";
+const clave = "23Z86A9FIh6Cq1b8nfY6iov2BidVN7K2fk0iLNu9";
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${clave}`)
   .then(response => response.json())
   .then(datosApi => {
