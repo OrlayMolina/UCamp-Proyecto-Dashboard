@@ -21,7 +21,7 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${clave}`)
     console.error("Error al obtener los datos de la API de la NASA:", error);
   });
 
-// Obtener datos de los 20 primeros asteroides
+// Obtener datos de los 10 primeros asteroides
 fetch("https://ssd-api.jpl.nasa.gov/sb_sat.api", {
   method: 'GET'
 })
@@ -29,8 +29,8 @@ fetch("https://ssd-api.jpl.nasa.gov/sb_sat.api", {
   .then(datos => {
     const ctx = document.getElementById('myChart');
     
-    // Filtrar y ordenar los datos de los 20 primeros asteroides
-    const asteroides = datos.data.slice(0, 20).sort((a, b) => a.sat.prov_year - b.sat.prov_year);
+    // Filtra y ordena los datos de los 10 primeros asteroides
+    const asteroides = datos.data.slice(0, 10).sort((a, b) => a.sat.prov_year - b.sat.prov_year);
 
     // Obtener los nombres y años de descubrimiento
     const labels = asteroides.map(asteroide => asteroide.sat.sat_fullname);
@@ -39,7 +39,7 @@ fetch("https://ssd-api.jpl.nasa.gov/sb_sat.api", {
     // Crear un conjunto de datos para la gráfica de donut
     const datasets = [{
       data: years,
-      backgroundColor: ['#FF5733', '#33FFB1', '#336BFF', '#33FFD9', '#C433FF'], // Colores para los años
+      backgroundColor: ['#FF5733', '#33FFB1', '#336BFF', '#34FEA9', '#C433FF', '#CF5555','#CF4111'], // Colores para los años
     }];
 
     // Creación de gráfica
